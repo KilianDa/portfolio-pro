@@ -361,6 +361,11 @@ body {
     line-height: 1.8;
 }
 
+.about-cta {
+    margin-top: 1rem;
+    text-align: center;
+}
+
 /* Timeline */
 .timeline {
     max-width: 800px;
@@ -421,8 +426,35 @@ body {
 /* Projects Section */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(2, minmax(420px, 1fr));
+    gap: 2.5rem;
+}
+
+.project-card-wide {
+    grid-column: span 2;
+}
+
+.project-content-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
     gap: 2rem;
+    align-items: flex-start;
+}
+
+.project-media {
+    width: 100%;
+}
+
+.project-media .instagram-media {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+}
+
+@media (max-width: 968px) {
+    .project-content-split {
+        grid-template-columns: 1fr;
+    }
 }
 
 .project-card {
@@ -555,10 +587,73 @@ body {
 }
 
 /* Skills Section */
+.section#competences .container,
+#competences .container {
+    max-width: 1400px;
+}
+
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.5rem;
+}
+
+/* Services Section */
+.services-grid {
+    max-width: 1000px;
+    margin: 2rem auto 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
+    border: 2px solid rgba(99, 102, 241, 0.2);
+    border-radius: 20px;
+    padding: 2.5rem 2.25rem;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.service-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.service-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.service-card ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.service-card li {
+    padding-left: 1.5rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    position: relative;
+    color: var(--text-secondary);
+}
+
+.service-card li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
 }
 
 .skill-category {
@@ -679,6 +774,40 @@ body {
 .hobby-highlight strong {
     color: var(--primary-color);
     font-weight: 600;
+}
+
+/* Photo / vidéo media grid */
+.media-grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.media-item {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    background-color: var(--bg-alt);
+}
+
+.media-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.media-video-player {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .media-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .hobbies-grid {
@@ -1030,16 +1159,6 @@ body {
     }
 }
 
-/* Initial state for elements to be animated */
-.section:not(.fade-in-up),
-.project-card:not(.fade-in-up),
-.skill-category:not(.fade-in-up),
-.timeline-item:not(.fade-in-up) {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: none;
-}
-
 .fade-in-up {
     animation: fadeInUp 0.6s ease-out forwards;
     opacity: 1;
@@ -1051,15 +1170,6 @@ body {
     .fade-in-up {
         animation: fadeInUp 0.4s ease-out;
         will-change: auto;
-    }
-
-    /* Pre-apply initial state for smoother animations */
-    .section:not(.fade-in-up),
-    .project-card:not(.fade-in-up),
-    .skill-category:not(.fade-in-up),
-    .timeline-item:not(.fade-in-up) {
-        opacity: 0;
-        transform: translateY(20px);
     }
 
     /* Reduce animation distance on mobile */
