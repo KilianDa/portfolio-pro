@@ -10,151 +10,189 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <div class="nav-brand"><a href="index.html" style="text-decoration: none; color: inherit;">Kilian</a></div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html#accueil" class="nav-link">Accueil</a></li>
-                <li><a href="index.html#apropos" class="nav-link">À propos</a></li>
-                <li><a href="index.html#parcours" class="nav-link">Parcours</a></li>
-                <li><a href="index.html#projets" class="nav-link">Projets</a></li>
-                <li><a href="index.html#competences" class="nav-link">Compétences</a></li>
-                <li><a href="index.html#loisirs" class="nav-link">Loisirs</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <div class="nav-brand">Kilian</div>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html#accueil" class="nav-link">Accueil</a></li>
+            <li><a href="index.html#apropos" class="nav-link">À propos</a></li>
+            <li><a href="index.html#services" class="nav-link">Services</a></li>
+            <li><a href="index.html#parcours" class="nav-link">Parcours</a></li>
+            <li><a href="index.html#projets" class="nav-link">Projets</a></li>
+            <li><a href="index.html#competences" class="nav-link">Compétences</a></li>
+            <li><a href="index.html#photo-video" class="nav-link">Photo & vidéo</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
 
-    <!-- Project Header -->
-    <section class="project-header">
-        <div class="container">
-            <a href="index.html#projets" class="back-link">← Retour aux projets</a>
-            <div class="project-header-content">
-                <div class="project-header-badge">Projet en vedette</div>
-                <h1 class="project-header-title">V2C Shop</h1>
-                <p class="project-header-subtitle">Projet professionnel (Freelance) | Octobre 2024</p>
-                <p class="project-header-description">
-                    Réalisation d'un site e-commerce complet pour V2C, une petite marque indépendante de vente
-                    de t-shirts. L'objectif était de créer une boutique en ligne moderne et esthétique, facile
-                    à administrer pour le client et optimisée pour la conversion.
+<!-- Project Header -->
+<section class="project-header">
+    <div class="container">
+        <a href="index.html#projets" class="back-link">← Retour aux projets</a>
+        <div class="project-header-content">
+            <div class="project-header-badge">Projet en vedette</div>
+            <h1 class="project-header-title">V2C Shop</h1>
+            <p class="project-header-subtitle">Projet professionnel (Freelance) | Octobre 2024</p>
+            <p class="project-header-description">
+                Réalisation d'un site e-commerce complet pour V2C, une petite marque indépendante de vente
+                de t-shirts. L'objectif était de créer une boutique en ligne moderne et esthétique, facile
+                à administrer pour le client et optimisée pour la conversion.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Project Details -->
+<section class="section">
+    <div class="container">
+        <div class="project-details">
+            <!-- Contexte -->
+            <div class="project-detail-section">
+                <h2>Contexte du projet</h2>
+                <p>
+                    V2C est une petite marque indépendante spécialisée dans la vente de t-shirts. Le client souhaitait
+                    créer une boutique en ligne moderne et esthétique qui reflète l'identité de sa marque. Le projet
+                    nécessitait une solution complète : de la conception à la mise en production, en passant par le
+                    développement et l'intégration d'un système de paiement sécurisé.
+                </p>
+            </div>
+
+            <!-- Missions -->
+            <div class="project-detail-section">
+                <h2>Mes missions</h2>
+                <div class="missions-grid">
+                    <div class="mission-card">
+                        <h3>Analyse des besoins</h3>
+                        <p>Étude approfondie des besoins du client, définition des fonctionnalités essentielles et
+                            choix du design.</p>
+                    </div>
+                    <div class="mission-card">
+                        <h3>Conception UX/UI</h3>
+                        <p>Tests et ajustements de plusieurs designs d'expérience utilisateur pour garantir une
+                            navigation
+                            intuitive et une conversion optimale.</p>
+                    </div>
+                    <div class="mission-card">
+                        <h3>Développement Full-Stack</h3>
+                        <p>Développement complet du Front-end et Back-end de la boutique.</p>
+                    </div>
+                    <div class="mission-card">
+                        <h3>Intégration Stripe</h3>
+                        <p>Mise en place d'un système de paiement sécurisé via l'API Stripe, garantissant la sécurité
+                            des transactions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technologies -->
+            <div class="project-detail-section">
+                <h2>Technologies utilisées</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <h4>Front-End</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="tech-item">
+                        <h4>Back-End</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Node.js</span>
+                        </div>
+                    </div>
+                    <div class="tech-item">
+                        <h4>Paiement</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Stripe API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vidéo -->
+            <div class="project-detail-section">
+                <h2>Démonstration</h2>
+                <div class="video-container">
+                    <video controls class="project-video">
+                        <source src="archives-V2C/archive-v2c.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                </div>
+            </div>
+
+            <!-- Résultats -->
+            <div class="project-detail-section">
+                <h2>Résultats et apprentissages</h2>
+                <p>
+                    Ce projet freelance a été une expérience incroyablement formatrice. Il m'a permis de mettre en
+                    pratique
+                    mes compétences techniques dans un contexte professionnel réel, tout en développant mes compétences
+                    en
+                    gestion de projet et en relation client.
+                </p>
+                <p>
+                    J'ai particulièrement apprécié cette expérience car elle m'a permis de mettre mes connaissances à
+                    exécution et d'aider mon client à améliorer son business grâce à mes compétences. Gérer la relation
+                    client, respecter les délais et livrer un produit fonctionnel a confirmé mon choix de carrière dans
+                    le développement web.
                 </p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Project Details -->
-    <section class="section">
-        <div class="container">
-            <div class="project-details">
-                <!-- Contexte -->
-                <div class="project-detail-section">
-                    <h2>Contexte du projet</h2>
-                    <p>
-                        V2C est une petite marque indépendante spécialisée dans la vente de t-shirts. Le client souhaitait 
-                        créer une boutique en ligne moderne et esthétique qui reflète l'identité de sa marque. Le projet 
-                        nécessitait une solution complète : de la conception à la mise en production, en passant par le 
-                        développement et l'intégration d'un système de paiement sécurisé.
-                    </p>
-                </div>
-
-                <!-- Missions -->
-                <div class="project-detail-section">
-                    <h2>Mes missions</h2>
-                    <div class="missions-grid">
-                        <div class="mission-card">
-                            <h3>Analyse des besoins</h3>
-                            <p>Étude approfondie des besoins du client, définition des fonctionnalités essentielles et 
-                            établissement d'un cahier des charges détaillé.</p>
-                        </div>
-                        <div class="mission-card">
-                            <h3>Conception UX/UI</h3>
-                            <p>Création de maquettes et conception de l'expérience utilisateur pour garantir une navigation 
-                            intuitive et une conversion optimale.</p>
-                        </div>
-                        <div class="mission-card">
-                            <h3>Développement Full-Stack</h3>
-                            <p>Développement complet du Front-end et Back-end de la boutique, avec une architecture 
-                            modulaire et maintenable.</p>
-                        </div>
-                        <div class="mission-card">
-                            <h3>Intégration Stripe</h3>
-                            <p>Mise en place d'un système de paiement sécurisé via l'API Stripe, garantissant la sécurité 
-                            des transactions.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Technologies -->
-                <div class="project-detail-section">
-                    <h2>Technologies utilisées</h2>
-                    <div class="tech-grid">
-                        <div class="tech-item">
-                            <h4>Front-End</h4>
-                            <div class="tech-tags">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                            </div>
-                        </div>
-                        <div class="tech-item">
-                            <h4>Back-End</h4>
-                            <div class="tech-tags">
-                                <span class="tech-tag">Node.js</span>
-                            </div>
-                        </div>
-                        <div class="tech-item">
-                            <h4>Paiement</h4>
-                            <div class="tech-tags">
-                                <span class="tech-tag">Stripe API</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Vidéo -->
-                <div class="project-detail-section">
-                    <h2>Démonstration</h2>
-                    <div class="video-container">
-                        <video controls class="project-video">
-                            <source src="archives-V2C/archive-v2c.mp4" type="video/mp4">
-                            Votre navigateur ne supporte pas la lecture de vidéos.
-                        </video>
-                    </div>
-                </div>
-
-                <!-- Résultats -->
-                <div class="project-detail-section">
-                    <h2>Résultats et apprentissages</h2>
-                    <p>
-                        Ce projet freelance a été une expérience incroyablement formatrice. Il m'a permis de mettre en pratique 
-                        mes compétences techniques dans un contexte professionnel réel, tout en développant mes compétences en 
-                        gestion de projet et en relation client.
-                    </p>
-                    <p>
-                        J'ai particulièrement apprécié cette expérience car elle m'a permis de mettre mes connaissances à 
-                        exécution et d'aider mon client à améliorer son business grâce à mes compétences. Gérer la relation 
-                        client, respecter les délais et livrer un produit fonctionnel a confirmé mon choix de carrière dans 
-                        le développement web.
-                    </p>
+<!-- Section Contact -->
+<section id="contact" class="section">
+    <div class="container">
+        <h2 class="section-title">Contactez-moi</h2>
+        <p class="section-subtitle">
+            Vous avez un projet en tête ? N'hésitez pas à me contacter !
+        </p>
+        <div class="contact-content">
+            <div class="contact-info">
+                <p>
+                    Je suis toujours ouvert à discuter de nouveaux projets, opportunités de collaboration, etc.
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:kilian.dach@etu.umontpellier.fr" class="contact-link">
+                        <span class="contact-icon">✉</span>
+                        <span>Email</span>
+                    </a>
+                    <a href="https://www.instagram.com/kilianvisuals/" class="contact-link" target="_blank">
+                        <span class="contact-icon">📸</span>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://github.com/KilianDa" class="contact-link" target="_blank">
+                        <span class="contact-icon">🔗</span>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="Dach-Kilian-CV.pdf" class="contact-link" target="_blank" download>
+                        <span class="contact-icon">📄</span>
+                        <span>Télécharger mon CV</span>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Kilian. Tous droits réservés.</p>
-        </div>
-    </footer>
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 Kilian. Tous droits réservés.</p>
+    </div>
+</footer>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
 

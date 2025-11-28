@@ -10,177 +10,214 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <div class="nav-brand"><a href="index.html" style="text-decoration: none; color: inherit;">Kilian</a></div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html#accueil" class="nav-link">Accueil</a></li>
-                <li><a href="index.html#apropos" class="nav-link">À propos</a></li>
-                <li><a href="index.html#parcours" class="nav-link">Parcours</a></li>
-                <li><a href="index.html#projets" class="nav-link">Projets</a></li>
-                <li><a href="index.html#competences" class="nav-link">Compétences</a></li>
-                <li><a href="index.html#loisirs" class="nav-link">Loisirs</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <div class="nav-brand">Kilian</div>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html#accueil" class="nav-link">Accueil</a></li>
+            <li><a href="index.html#apropos" class="nav-link">À propos</a></li>
+            <li><a href="index.html#services" class="nav-link">Services</a></li>
+            <li><a href="index.html#parcours" class="nav-link">Parcours</a></li>
+            <li><a href="index.html#projets" class="nav-link">Projets</a></li>
+            <li><a href="index.html#competences" class="nav-link">Compétences</a></li>
+            <li><a href="index.html#photo-video" class="nav-link">Photo & vidéo</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
 
-    <!-- Project Header -->
-    <section class="project-header">
-        <div class="container">
-            <a href="index.html#projets" class="back-link">← Retour aux projets</a>
-            <div class="project-header-content">
-                <h1 class="project-header-title">BottomUp</h1>
-                <p class="project-header-subtitle">Projet académique (BUT Informatique S3) | Octobre - Décembre 2025</p>
-                <p class="project-header-description">
-                    Dans le cadre de mon parcours RACDV, nous avons développé un site web de vote participatif.
-                    Un site en PHP, HTML, CSS et Javascript qui a été développé en équipe de 4 en utilisant la
-                    méthode agile. Ce projet a été très enrichissant car il m'a permis d'apprendre à travailler
-                    en équipe avec des méthodes et outils de gestion (Trello, Git), il m'a aussi permis de bien
-                    comprendre comment gérer un client (ses priorités, délais, contraintes, etc).
+<!-- Project Header -->
+<section class="project-header">
+    <div class="container">
+        <a href="index.html#projets" class="back-link">← Retour aux projets</a>
+        <div class="project-header-content">
+            <h1 class="project-header-title">BottomUp</h1>
+            <p class="project-header-subtitle">Projet académique (BUT Informatique S3) | Octobre - Décembre 2025</p>
+            <p class="project-header-description">
+                Dans le cadre de mon parcours RACDV, nous avons développé un site web de vote participatif.
+                Un site en PHP, HTML, CSS et Javascript qui a été développé en équipe de 4 en utilisant la
+                méthode agile. Ce projet a été très enrichissant car il m'a permis d'apprendre à travailler
+                en équipe avec des méthodes et outils de gestion (Trello, Git), il m'a aussi permis de bien
+                comprendre comment gérer un client (ses priorités, délais, contraintes, etc).
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Project Details -->
+<section class="section">
+    <div class="container">
+        <div class="project-details">
+            <!-- Contexte -->
+            <div class="project-detail-section">
+                <h2>Contexte du projet</h2>
+                <p>
+                    BottomUp est un système de vote participatif développé dans le cadre du BUT Informatique,
+                    parcours RACDV. Ce projet académique nous a permis de mettre en pratique les compétences
+                    acquises en conception, développement et validation d'applications web.
+                </p>
+                <p>
+                    Le projet a été réalisé en équipe de 4 personnes en utilisant la méthode agile (Scrum),
+                    ce qui nous a permis de gérer efficacement les différentes phases du développement tout
+                    en respectant les contraintes et priorités du client.
+                </p>
+            </div>
+
+            <!-- Missions -->
+            <div class="project-detail-section">
+                <h2>Mes missions</h2>
+                <div class="missions-grid">
+                    <div class="mission-card">
+                        <h3>Architecture MVC</h3>
+                        <p>Mise en place d'une architecture Model-View-Controller pour structurer le code et
+                            faciliter la maintenance et l'évolution de l'application.</p>
+                    </div>
+                    <div class="mission-card">
+                        <h3>Généralisation du code</h3>
+                        <p>Réduction de la duplication de code en créant des composants réutilisables et en
+                            appliquant les principes DRY (Don't Repeat Yourself).</p>
+                    </div>
+                    <div class="mission-card">
+                        <h3>Conception de la base de données</h3>
+                        <p>Modélisation et création de la base de données SQL, en veillant à la normalisation
+                            et à l'intégrité des données.</p>
+                    </div>
+                    <div class="mission-card">
+                        <h3>Tests unitaires</h3>
+                        <p>Réalisation de tests unitaires pour garantir la qualité et la fiabilité du code
+                            développé.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technologies -->
+            <div class="project-detail-section">
+                <h2>Technologies utilisées</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <h4>Front-End</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="tech-item">
+                        <h4>Back-End</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">PHP</span>
+                        </div>
+                    </div>
+                    <div class="tech-item">
+                        <h4>Base de données</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">phpMyAdmin</span>
+                        </div>
+                    </div>
+                    <div class="tech-item">
+                        <h4>Outils</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Git</span>
+                            <span class="tech-tag">GitLab</span>
+                            <span class="tech-tag">Trello</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Méthodologie -->
+            <div class="project-detail-section">
+                <h2>Méthodologie de travail</h2>
+                <p>
+                    Ce projet a été développé en utilisant la méthode agile Scrum, avec des sprints réguliers
+                    et des réunions d'équipe pour suivre l'avancement. Nous avons utilisé Trello pour la gestion
+                    des tâches et Git/GitLab pour le versionning et la collaboration.
+                </p>
+                <p>
+                    Cette expérience m'a permis de bien comprendre comment gérer un client (ses priorités,
+                    délais, contraintes, etc.) et d'apprendre à travailler efficacement en équipe avec des
+                    méthodes et outils de gestion professionnels.
+                </p>
+            </div>
+
+            <!-- Archives -->
+            <div class="project-detail-section">
+                <h2>Archives du projet</h2>
+                <p class="archives-placeholder">
+                    Les archives du projet seront bientôt disponibles ici. Vous pourrez y trouver des captures d'écran,
+                    des vidéos de démonstration et d'autres ressources liées au projet BottomUp.
+                </p>
+                <!-- Cette section sera mise à jour lorsque les archives seront ajoutées -->
+            </div>
+
+            <!-- Résultats -->
+            <div class="project-detail-section">
+                <h2>Résultats et apprentissages</h2>
+                <p>
+                    Ce projet a été très enrichissant car il m'a permis d'apprendre à travailler en équipe avec
+                    des méthodes et outils de gestion professionnels. J'ai également développé mes compétences en
+                    architecture logicielle, en conception de bases de données et en tests unitaires.
+                </p>
+                <p>
+                    La gestion d'un projet en équipe avec un client réel m'a permis de comprendre l'importance
+                    de la communication, de la planification et de l'adaptabilité dans le développement logiciel.
                 </p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Project Details -->
-    <section class="section">
-        <div class="container">
-            <div class="project-details">
-                <!-- Contexte -->
-                <div class="project-detail-section">
-                    <h2>Contexte du projet</h2>
-                    <p>
-                        BottomUp est un système de vote participatif développé dans le cadre du BUT Informatique, 
-                        parcours RACDV. Ce projet académique nous a permis de mettre en pratique les compétences 
-                        acquises en conception, développement et validation d'applications web.
-                    </p>
-                    <p>
-                        Le projet a été réalisé en équipe de 4 personnes en utilisant la méthode agile (Scrum), 
-                        ce qui nous a permis de gérer efficacement les différentes phases du développement tout 
-                        en respectant les contraintes et priorités du client.
-                    </p>
-                </div>
-
-                <!-- Missions -->
-                <div class="project-detail-section">
-                    <h2>Mes missions</h2>
-                    <div class="missions-grid">
-                        <div class="mission-card">
-                            <h3>Architecture MVC</h3>
-                            <p>Mise en place d'une architecture Model-View-Controller pour structurer le code et 
-                            faciliter la maintenance et l'évolution de l'application.</p>
-                        </div>
-                        <div class="mission-card">
-                            <h3>Généralisation du code</h3>
-                            <p>Réduction de la duplication de code en créant des composants réutilisables et en 
-                            appliquant les principes DRY (Don't Repeat Yourself).</p>
-                        </div>
-                        <div class="mission-card">
-                            <h3>Conception de la base de données</h3>
-                            <p>Modélisation et création de la base de données SQL, en veillant à la normalisation 
-                            et à l'intégrité des données.</p>
-                        </div>
-                        <div class="mission-card">
-                            <h3>Tests unitaires</h3>
-                            <p>Réalisation de tests unitaires pour garantir la qualité et la fiabilité du code 
-                            développé.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Technologies -->
-                <div class="project-detail-section">
-                    <h2>Technologies utilisées</h2>
-                    <div class="tech-grid">
-                        <div class="tech-item">
-                            <h4>Front-End</h4>
-                            <div class="tech-tags">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                            </div>
-                        </div>
-                        <div class="tech-item">
-                            <h4>Back-End</h4>
-                            <div class="tech-tags">
-                                <span class="tech-tag">PHP</span>
-                            </div>
-                        </div>
-                        <div class="tech-item">
-                            <h4>Base de données</h4>
-                            <div class="tech-tags">
-                                <span class="tech-tag">SQL</span>
-                                <span class="tech-tag">phpMyAdmin</span>
-                            </div>
-                        </div>
-                        <div class="tech-item">
-                            <h4>Outils</h4>
-                            <div class="tech-tags">
-                                <span class="tech-tag">Docker</span>
-                                <span class="tech-tag">Git</span>
-                                <span class="tech-tag">GitLab</span>
-                                <span class="tech-tag">Trello</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Méthodologie -->
-                <div class="project-detail-section">
-                    <h2>Méthodologie de travail</h2>
-                    <p>
-                        Ce projet a été développé en utilisant la méthode agile Scrum, avec des sprints réguliers 
-                        et des réunions d'équipe pour suivre l'avancement. Nous avons utilisé Trello pour la gestion 
-                        des tâches et Git/GitLab pour le versionning et la collaboration.
-                    </p>
-                    <p>
-                        Cette expérience m'a permis de bien comprendre comment gérer un client (ses priorités, 
-                        délais, contraintes, etc.) et d'apprendre à travailler efficacement en équipe avec des 
-                        méthodes et outils de gestion professionnels.
-                    </p>
-                </div>
-
-                <!-- Archives -->
-                <div class="project-detail-section">
-                    <h2>Archives du projet</h2>
-                    <p class="archives-placeholder">
-                        Les archives du projet seront bientôt disponibles ici. Vous pourrez y trouver des captures d'écran, des vidéos de démonstration et d'autres ressources liées au projet BottomUp.
-                    </p>
-                    <!-- Cette section sera mise à jour lorsque les archives seront ajoutées -->
-                </div>
-
-                <!-- Résultats -->
-                <div class="project-detail-section">
-                    <h2>Résultats et apprentissages</h2>
-                    <p>
-                        Ce projet a été très enrichissant car il m'a permis d'apprendre à travailler en équipe avec 
-                        des méthodes et outils de gestion professionnels. J'ai également développé mes compétences en 
-                        architecture logicielle, en conception de bases de données et en tests unitaires.
-                    </p>
-                    <p>
-                        La gestion d'un projet en équipe avec un client réel m'a permis de comprendre l'importance 
-                        de la communication, de la planification et de l'adaptabilité dans le développement logiciel.
-                    </p>
+<!-- Section Contact -->
+<section id="contact" class="section">
+    <div class="container">
+        <h2 class="section-title">Contactez-moi</h2>
+        <p class="section-subtitle">
+            Vous avez un projet en tête ? N'hésitez pas à me contacter !
+        </p>
+        <div class="contact-content">
+            <div class="contact-info">
+                <p>
+                    Je suis toujours ouvert à discuter de nouveaux projets, opportunités de collaboration, etc.
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:kilian.dach@etu.umontpellier.fr" class="contact-link">
+                        <span class="contact-icon">✉</span>
+                        <span>Email</span>
+                    </a>
+                    <a href="https://www.instagram.com/kilianvisuals/" class="contact-link" target="_blank">
+                        <span class="contact-icon">📸</span>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://github.com/KilianDa" class="contact-link" target="_blank">
+                        <span class="contact-icon">🔗</span>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="Dach-Kilian-CV.pdf" class="contact-link" target="_blank" download>
+                        <span class="contact-icon">📄</span>
+                        <span>Télécharger mon CV</span>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Kilian. Tous droits réservés.</p>
-        </div>
-    </footer>
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 Kilian. Tous droits réservés.</p>
+    </div>
+</footer>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
 
