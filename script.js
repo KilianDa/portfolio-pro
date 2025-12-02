@@ -51,7 +51,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Intersection Observer for fade-in animations
-// Optimized for both mobile and desktop
+// Optimized to trigger only once per element
+const animatedElements = new Set();
+
 function checkMobileDevice() {
     return window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
@@ -65,13 +67,17 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         // Only animate if element is intersecting and hasn't been animated yet
-        if (entry.isIntersecting && !entry.target.classList.contains('fade-in-up')) {
+        if (entry.isIntersecting && !animatedElements.has(entry.target)) {
+            // Mark as animated immediately to prevent multiple triggers
+            animatedElements.add(entry.target);
+            
             // Use requestAnimationFrame for smoother animations
             requestAnimationFrame(() => {
                 entry.target.classList.add('fade-in-up');
-                // Immediately stop observing to prevent re-animation
-                observer.unobserve(entry.target);
             });
+            
+            // Immediately stop observing to prevent re-animation
+            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
@@ -81,7 +87,7 @@ function initAnimations() {
     const sections = document.querySelectorAll('.section, .project-card, .skill-category, .timeline-item');
     sections.forEach(section => {
         // Only observe if not already animated
-        if (!section.classList.contains('fade-in-up')) {
+        if (!animatedElements.has(section)) {
             observer.observe(section);
         }
     });
@@ -133,118 +139,71 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Subtle parallax effect on images only (not on sections to avoid layout issues)
-// Disabled on mobile devices for better performance and UX
-let ticking = false;
-const imageParallaxState = new Map();
+// Parallax effects removed as requested
 
-function isMobileDevice() {
-    return window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-}
-
-function updateParallax() {
-    // Disable parallax on mobile devices
-    if (isMobileDevice()) {
-        const profileImg = document.querySelector('.profile-img');
-        const aboutImg = document.querySelector('.about-img');
-        if (profileImg) profileImg.style.transform = '';
-        if (aboutImg) aboutImg.style.transform = '';
-        ticking = false;
-        return;
-    }
-
-    const scrolled = window.pageYOffset;
-    const profileImg = document.querySelector('.profile-img');
-    const aboutImg = document.querySelector('.about-img');
-    
-    // Parallax on hero image (very subtle, only when visible and not hovered)
-    if (profileImg && !imageParallaxState.get(profileImg)) {
-        const heroSection = document.querySelector('.hero');
-        if (heroSection) {
-            const heroTop = heroSection.offsetTop;
-            const heroHeight = heroSection.offsetHeight;
-            const heroBottom = heroTop + heroHeight;
-            const windowHeight = window.innerHeight;
-            
-            // Only apply parallax when image is in viewport
-            if (scrolled + windowHeight >= heroTop && scrolled <= heroBottom) {
-                const parallaxValue = (scrolled - heroTop) * 0.08; // Very subtle
-                profileImg.style.transform = `translateY(${parallaxValue}px)`;
-            } else {
-                profileImg.style.transform = 'translateY(0)';
-            }
-        }
-    }
-    
-    // Parallax on about image (very subtle, only when visible and not hovered)
-    if (aboutImg && !imageParallaxState.get(aboutImg)) {
-        const aboutSection = document.querySelector('#apropos');
-        if (aboutSection) {
-            const aboutTop = aboutSection.offsetTop;
-            const aboutHeight = aboutSection.offsetHeight;
-            const aboutBottom = aboutTop + aboutHeight;
-            const windowHeight = window.innerHeight;
-            
-            // Only apply parallax when image is in viewport
-            if (scrolled + windowHeight >= aboutTop && scrolled <= aboutBottom) {
-                const parallaxValue = (scrolled + windowHeight - aboutTop) * 0.06; // Very subtle
-                aboutImg.style.transform = `translateY(${parallaxValue}px)`;
-            } else {
-                aboutImg.style.transform = 'translateY(0)';
-            }
-        }
-    }
-    
-    ticking = false;
-}
-
-window.addEventListener('scroll', () => {
-    if (!ticking) {
-        window.requestAnimationFrame(updateParallax);
-        ticking = true;
-    }
-});
-
-// Reset parallax on window resize
-window.addEventListener('resize', () => {
-    if (isMobileDevice()) {
-        const profileImg = document.querySelector('.profile-img');
-        const aboutImg = document.querySelector('.about-img');
-        if (profileImg) profileImg.style.transform = '';
-        if (aboutImg) aboutImg.style.transform = '';
-    }
-});
-
-// Disable parallax on hover to avoid conflicts with CSS hover effects
+// Lightbox pour la galerie photo / vidéo
 document.addEventListener('DOMContentLoaded', () => {
-    const profileImg = document.querySelector('.profile-img');
-    const aboutImg = document.querySelector('.about-img');
-    
-    [profileImg, aboutImg].forEach(img => {
-        if (img) {
-            imageParallaxState.set(img, false);
-            
-            img.addEventListener('mouseenter', () => {
-                imageParallaxState.set(img, true);
-                img.style.transform = ''; // Let CSS handle the hover transform
-            });
-            
-            img.addEventListener('mouseleave', () => {
-                imageParallaxState.set(img, false);
-                updateParallax(); // Re-enable parallax
-            });
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxVideo = document.getElementById('lightboxVideo');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxBackdrop = document.getElementById('lightboxBackdrop');
+
+    if (!lightbox || !lightboxImage || !lightboxVideo) return;
+
+    function openLightboxForImage(src, alt) {
+        lightboxVideo.pause();
+        lightboxVideo.style.display = 'none';
+        lightboxImage.style.display = 'block';
+        lightboxImage.src = src;
+        lightboxImage.alt = alt || '';
+        lightbox.classList.add('open');
+    }
+
+    function openLightboxForVideo(src) {
+        lightboxImage.style.display = 'none';
+        lightboxVideo.style.display = 'block';
+        lightboxVideo.src = src;
+        lightboxVideo.currentTime = 0;
+        lightboxVideo.play().catch(() => {});
+        lightbox.classList.add('open');
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('open');
+        lightboxImage.src = '';
+        lightboxVideo.pause();
+        lightboxVideo.src = '';
+    }
+
+    document.querySelectorAll('.gallery-img').forEach(img => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', () => {
+            const fullSrc = img.dataset.full || img.src;
+            openLightboxForImage(fullSrc, img.alt);
+        });
+    });
+
+    document.querySelectorAll('.gallery-video').forEach(video => {
+        video.style.cursor = 'zoom-in';
+        video.addEventListener('click', () => {
+            const source = video.querySelector('source');
+            const fullSrc = (source && (source.dataset.full || source.src)) || video.currentSrc || video.src;
+            openLightboxForVideo(fullSrc);
+        });
+    });
+
+    [lightboxClose, lightboxBackdrop].forEach(el => {
+        if (el) {
+            el.addEventListener('click', closeLightbox);
         }
     });
-});
 
-// Add loading animation
-window.addEventListener('load', () => {
-    document.body.style.opacity = '0';
-    document.body.style.transition = 'opacity 0.3s ease-in';
-    
-    setTimeout(() => {
-        document.body.style.opacity = '1';
-    }, 100);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+            closeLightbox();
+        }
+    });
 });
 
 // Project card hover effects are now handled by CSS for better performance
